@@ -10,6 +10,8 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -17,11 +19,24 @@ import java.util.LinkedList;
 public class MainActivity extends AppCompatActivity {
 
     private static TickerViewModel tickerViewModel ;
+    Button addTickerButton;
+
+    View.OnClickListener addTickerListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent addTickerIntent = new Intent(MainActivity.this, AddTicker.class);
+            startActivity(addTickerIntent);
+
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        addTickerButton= findViewById(R.id.add_ticker_button);
+        addTickerButton.setOnClickListener(addTickerListener);
 
         tickerViewModel = new ViewModelProvider(this).get(TickerViewModel.class);
 

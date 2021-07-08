@@ -1,5 +1,6 @@
 package com.example.tickerwatchlistmanager;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -35,6 +36,9 @@ public class TickerListFragment extends Fragment {
 
             String clickTicker = (String) parent.getItemAtPosition(position);
             tickerViewModel.selectTicker(clickTicker);
+            Intent detailIntent = new Intent(getActivity(), TickerDetail.class);
+            detailIntent.putExtra("SELECTED_TICKER", clickTicker);
+            startActivity(detailIntent);
 
         }
     };
