@@ -1,6 +1,7 @@
 package com.example.tickerwatchlistmanager;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -96,4 +97,6 @@ public class TickerListFragment extends Fragment {
             }
         });
     }
+
+
 }

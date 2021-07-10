@@ -6,8 +6,10 @@ import androidx.core.content.ContextCompat;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.Manifest;
+import android.content.ContentResolver;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -43,17 +45,19 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = getIntent();
 
         String ticker = intent.getStringExtra("TICKER");
-        ArrayList<String> tickers = intent.getStringArrayListExtra("TICKER_LIST");
+        //ArrayList<String> tickers = intent.getStringArrayListExtra("TICKER_LIST");
 
-       if(tickers != null){
-          tickerViewModel.addMultipleTickers(tickers);
-       }
+      // if(tickers != null){
+        //  tickerViewModel.addMultipleTickers(tickers);
+      // }
 
 
-        if(ticker != null){
-            tickerViewModel.addTicker(ticker);
-            tickerViewModel.selectTicker(ticker);
-        }
+       // if(ticker != null){
+           // tickerViewModel.addTicker(ticker);
+         //   tickerViewModel.selectTicker(ticker);
+        //}
+
+        getAllTickers();
 
         if(ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.RECEIVE_SMS)
         != PackageManager.PERMISSION_GRANTED){
@@ -61,6 +65,30 @@ public class MainActivity extends AppCompatActivity {
                     101);
         }
     }
+
+    private void getAllTickers(){
+        ArrayList<String> tickers = new ArrayList<>();
+        Cursor cursor = getContentResolver().query(
+                TickerContentProvider.CONTENT_URI,
+                new String[]{TickerContentProvider.TABLE_TICKER_COLUMNS[0]},
+                null,
+                null, null);
+
+        if(cursor != null){
+            cursor.moveToFirst();
+            for(int i= 0; i < cursor.getCount(); i++){
+
+                tickers.add(cursor.getString(cursor.getColumnIndexOrThrow(
+                        TickerContentProvider.TABLE_TICKER_COLUMNS[0])));
+
+                cursor.moveToNext();
+            }
+            tickerViewModel.addMultipleTickers(tickers);
+        }
+
+    }
+
+
 
     public static TickerViewModel getSharedModule(){
        return tickerViewModel;

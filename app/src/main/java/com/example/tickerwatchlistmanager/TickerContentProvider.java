@@ -13,8 +13,7 @@ public class TickerContentProvider extends ContentProvider {
 
     public final static String DB_NAME = "TickerDb";
     public final static String TABLE_TICKERS = "Tickers";
-    public final static String[] TABLE_TICKER_COLUMNS = { "ticker" ,
-            "company"};
+    public final static String[] TABLE_TICKER_COLUMNS = { "ticker"};
     public final static String AUTHORITY = "TickerDB";
     public final static Uri CONTENT_URI =
             Uri.parse("content://" + AUTHORITY + "/"+ TABLE_TICKERS);
@@ -22,8 +21,7 @@ public class TickerContentProvider extends ContentProvider {
 
     private static final String SQL_CREATE_MAIN =
             "CREATE TABLE "+ TABLE_TICKERS + "( _ID INTEGER PRIMARY KEY, "+
-                    TABLE_TICKER_COLUMNS[0] + " TEXT,"+
-                    TABLE_TICKER_COLUMNS[1] + " TEXT)";
+                    TABLE_TICKER_COLUMNS[0] + " TEXT)";
 
     protected static final class MainDatabaseHelper extends SQLiteOpenHelper {
 
@@ -65,8 +63,7 @@ public class TickerContentProvider extends ContentProvider {
     @Override
     public Uri insert(Uri uri, ContentValues values) {
 
-        if(values.getAsString(TABLE_TICKER_COLUMNS[0]).trim().equals("")||
-                values.getAsString(TABLE_TICKER_COLUMNS[1]).trim().equals("")){
+        if(values.getAsString(TABLE_TICKER_COLUMNS[0]).trim().equals("")){
             return null;
         }
 
