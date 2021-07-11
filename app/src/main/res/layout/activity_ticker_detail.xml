@@ -12,7 +12,7 @@
 
 
     <TextView
-        android:id="@+id/ticker_detail_tv"
+        android:id="@+id/ticker_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="76dp"
@@ -97,22 +97,22 @@
         android:id="@+id/beta_tv"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="13dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="13dp"
         android:text="TextView"
-        app:layout_constraintStart_toEndOf="@+id/week_52_range_tv"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView1" />
+
 
     <TextView
         android:id="@+id/exchange_textView"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="70dp"
-        android:layout_marginTop="13dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="13dp"
         android:text="TextView"
-        app:layout_constraintStart_toEndOf="@+id/industry_tv"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/exchange_label" />
-
 
     <TextView
         android:id="@+id/v_average_label"
@@ -128,10 +128,10 @@
         android:id="@+id/mk_cap_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="34dp"
         android:layout_marginTop="57dp"
+        android:layout_marginEnd="65dp"
         android:text="Mkt Cap"
-        app:layout_constraintStart_toEndOf="@+id/v_average_label"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ipo_date_textView" />
 
     <TextView
@@ -141,7 +141,7 @@
         android:layout_marginStart="41dp"
         android:layout_marginTop="20dp"
         android:text="$25.00"
-        app:layout_constraintStart_toEndOf="@+id/ticker_detail_tv"
+        app:layout_constraintStart_toEndOf="@+id/ticker_tv"
         app:layout_constraintTop_toTopOf="parent" />
 
 
@@ -149,10 +149,10 @@
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="47dp"
         android:layout_marginTop="25dp"
+        android:layout_marginEnd="82dp"
         android:text="Beta"
-        app:layout_constraintStart_toEndOf="@+id/week_52_range_label"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mk_cap_tv" />
 
     <TextView
@@ -177,7 +177,7 @@
 
     <TextView
         android:id="@+id/sector_tv"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
         android:layout_marginTop="13dp"
@@ -187,10 +187,10 @@
 
     <TextView
         android:id="@+id/industry_tv"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="67dp"
-        android:layout_marginTop="13dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
         android:text="TextView"
         app:layout_constraintStart_toEndOf="@+id/sector_tv"
         app:layout_constraintTop_toBottomOf="@+id/industry_label" />
@@ -199,10 +199,10 @@
         android:id="@+id/mk_cap_tv"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
         android:layout_marginTop="13dp"
+        android:layout_marginEnd="13dp"
         android:text="0"
-        app:layout_constraintStart_toEndOf="@+id/v_average_tv"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mk_cap_label" />
 
     <TextView
@@ -210,15 +210,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="70dp"
         android:text="Stock Price Change"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/company_logo_iv" />
 
     <ImageView
         android:id="@+id/company_logo_iv"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="73dp"
+        android:layout_height="85dp"
         android:layout_marginStart="17dp"
         android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -234,7 +234,7 @@
         android:layout_marginTop="12dp"
         android:text="Company's Name"
         app:layout_constraintStart_toEndOf="@+id/company_logo_iv"
-        app:layout_constraintTop_toBottomOf="@+id/ticker_detail_tv" />
+        app:layout_constraintTop_toBottomOf="@+id/ticker_tv" />
 
     <TextView
         android:id="@+id/ipo_data_label"
@@ -281,15 +281,15 @@
         android:id="@+id/exchange_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="77dp"
         android:layout_marginTop="40dp"
+        android:layout_marginEnd="62dp"
         android:text="Exchange"
-        app:layout_constraintStart_toEndOf="@+id/industry_label"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/description_tv" />
 
     <TextView
         android:id="@+id/website_tv"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="122dp"
         android:layout_marginTop="13dp"
@@ -299,7 +299,7 @@
 
     <TextView
         android:id="@+id/last_div_tv"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="17dp"
         android:layout_marginTop="13dp"
@@ -309,10 +309,10 @@
 
     <TextView
         android:id="@+id/week_52_range_tv"
-        android:layout_width="wrap_content"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="86dp"
-        android:layout_marginTop="13dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="12dp"
         android:text="TextView"
         app:layout_constraintStart_toEndOf="@+id/last_div_tv"
         app:layout_constraintTop_toBottomOf="@+id/week_52_range_label" />

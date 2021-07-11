@@ -140,10 +140,11 @@ public class AddTicker extends AppCompatActivity {
                 .addQueryParameter("apikey","b16382aaff34f87192ff44598b0e5177")
                 .setPriority(Priority.LOW)
                 .build();
-        req.getAsObjectList(Object.class, new ParsedRequestListener<List<Object>>() {
+        req.getAsObjectList(Ticker.class, new ParsedRequestListener<List<Ticker>>() {
             @Override
-            public void onResponse(List<Object> objects) {
+            public void onResponse(List<Ticker> objects) {
                 if(objects.size() != 0){
+                    Log.d("HERE", "h");
                     if(addTicker(ticker)){
                         //store ticker
                         Intent detailIntent = new Intent(AddTicker.this, TickerDetail.class);

@@ -38,7 +38,7 @@ public class TickerListFragment extends Fragment {
             String clickTicker = (String) parent.getItemAtPosition(position);
             tickerViewModel.selectTicker(clickTicker);
             Intent detailIntent = new Intent(getActivity(), TickerDetail.class);
-            detailIntent.putExtra("SELECTED_TICKER", clickTicker);
+            detailIntent.putExtra("TICKER", clickTicker);
             startActivity(detailIntent);
 
         }
